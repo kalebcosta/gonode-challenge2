@@ -1,0 +1,12 @@
+<div class="modal" id="edit-section">
+  <form action="/app/{{ id_usuario }}/project/{{ id_projeto }}/{{ currentSection.id }}?_method=PUT" class="modal-content" method="POST">
+    <input type="text" name="name" id="section_title" value="{{ currentSection.title }}">
+
+    <div class="content-container">
+      <textarea name="content" class="mde">{{ currentSection.content }}</textarea>
+    </div>
+
+    <button type="submit">EDITAR SEÇÃO</button>
+    <a href="#" data-modal-close="#edit-section">CANCELAR</a>
+  </form>
+</div>

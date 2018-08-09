@@ -1,0 +1,12 @@
+<div class="modal" id="new-section">
+  <form action="/app/{{ project.id }}/section/create" class="modal-content" method="POST">
+    <input type="text" name="name" id="section_title">
+
+    <div class="content-container">
+      <textarea name="content" class="mde" placeholder="Conteúdo da Seção"></textarea>
+    </div>
+
+    <button type="submit">SALVAR SEÇÃO</button>
+    <a href="#" data-modal-close="#new-section">CANCELAR</a>
+  </form>
+</div>

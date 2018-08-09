@@ -1,0 +1,12 @@
+<nav>
+  <div class="sessions">
+    {% for section in sections %}
+      <a href="/app/{{ id_usuario }}/project/{{ project.id }}/{{ section.id }}" class="{% if section.id == activeSection %}active{% endif %}">{{section.title}}</a>
+    {% endfor %}
+  </div>
+
+  <form>
+    <input type="text" id="section_name" placeholder="Nova seção">
+    <button type="submit" class="btn" data-modal-open="#new-section"><img src="/img/plus.svg"></button>
+  </form>
+</nav>

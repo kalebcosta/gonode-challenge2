@@ -1,0 +1,28 @@
+{% extends "layouts/default.njk" %}
+
+{% block body %}
+  <div class="wrapper">
+    {% include "partials/header.njk" %}
+    <section id="main">
+      <div class="container">
+        {% include "partials/projectheader.njk" %}
+        <section id="content">
+          {% include "partials/section_nav.njk" %}
+          <article>
+            <div class="project-header">
+              <h1>{{ currentSection.title }}</h1>
+              <a href="" class="edit_section" data-modal-open="#edit-section">Editar</a>
+              <form action="/app/{{ id_usuario }}/project/{{ id_projeto }}/{{ currentSection.id }}?_method=DELETE" method="post">
+                <button type="submit" class="remove_section">Remover seção</button>
+              </form>
+            </div>
+            <p>{{ currentSection.formattedContent | safe }}</p>
+          </article>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  {% include "partials/modal_create.njk" %}
+  {% include "partials/modal_edit.njk" %}
+{% endblock %}
